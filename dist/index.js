@@ -70379,7 +70379,7 @@ async function restoreCache() {
     core.info('Attempting to restore cached toolchain');
     const primaryKey = await (0, helpers_1.getToolchainCacheKey)();
     const cachePrefix = (0, helpers_1.getCacheKeyPrefix)();
-    const cacheKey = await cache.restoreCache([(0, helpers_1.getPluginsDir)(), (0, helpers_1.getToolsDir)(), (0, helpers_1.getUidFile)()], primaryKey, [`${cachePrefix}-${process.platform}-${process.arch}`, cachePrefix]);
+    const cacheKey = await cache.restoreCache([(0, helpers_1.getPluginsDir)(), (0, helpers_1.getToolsDir)(), (0, helpers_1.getUidFile)()], primaryKey, [`${cachePrefix}-${process.platform}-${process.arch}`]);
     if (cacheKey) {
         core.saveState('cacheHitKey', cacheKey);
         core.info(`Toolchain cache restored using key ${primaryKey}`);
